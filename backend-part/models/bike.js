@@ -27,13 +27,18 @@ const bikeSchema = new Schema(
         },
         price: {
             type: Number,
+            minlength: 5,
             required: [true, "price is required"],
+        },
+        id: {
+            type: String,
+            required: [true, "ID is required"],
+            unique: true,
         },
         description: {
             type: String,
             minlength: 10,
-            required: [true, "price is required"],
-
+            required: [true, "description is required"],
         },
         stats: {
             type: String,
@@ -60,6 +65,7 @@ const bikesSchema = Joi.object({
     wheel_size: Joi.number().required(),
     price: Joi.number().required(),
     description: Joi.string().min(10).required(),
+    id: Joi.string().required(),
 });
 
 

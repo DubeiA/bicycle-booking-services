@@ -1,6 +1,7 @@
 const { Bike } = require("../models/bike");
 const { HttpError, ctrlWrapper } = require("../helpers");
 
+
 const getAllBike = async (req, res) => {
 
     const bikes = await Bike.find()
@@ -12,6 +13,7 @@ const getAllBike = async (req, res) => {
 }
 
 const addBike = async (req, res) => {
+
 
     const result = await Bike.create({ ...req.body });
     res.status(201).json(result);
