@@ -1,0 +1,37 @@
+.bold {
+  color: #333;
+
+  font-size: 18px;
+
+  font-weight: 700;
+  line-height: normal;
+
+  text-transform: uppercase;
+}
+
+.regular {
+  color: #333;
+
+  font-size: 18px;
+
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.light {
+  color: #717171;
+  font-size: 12px;
+
+  font-weight: 400;
+  line-height: normal;
+}
+
+.price {
+  color: #000;
+
+  font-size: 24px;
+
+  font-weight: 400;
+  line-height: normal;
+}

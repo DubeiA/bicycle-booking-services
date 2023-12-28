@@ -1,0 +1,87 @@
+.list {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  height: 83px;
+  border: 2px solid #6fcf97;
+
+  background: #e8e8e8;
+}
+
+.itemBusy {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  height: 83px;
+  border: 2px solid #f2994a;
+
+  background: #e8e8e8;
+}
+
+.itemUn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  height: 83px;
+  border: 2px solid rgba(235, 87, 87, 0.5);
+  background: #e8e8e8;
+}
+
+.wraperName {
+  display: flex;
+  gap: 8px;
+}
+
+.wraperNameUn {
+  display: flex;
+  gap: 8px;
+  opacity: 0.5;
+}
+
+.wraperStats {
+  display: flex;
+  align-content: center;
+  gap: 20px;
+  align-items: center;
+  opacity: 1;
+}
+
+.wraperPriceUn {
+  opacity: 0.5;
+}
+
+.space {
+  margin-right: 4px;
+}
+
+.fontWeight {
+  color: #000;
+
+  font-family: Saira;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.spanHr {
+  text-transform: lowercase;
+}
