@@ -2,6 +2,8 @@
 
 On the backend side use Express and MongoDB to store data
 
+You'll need DB_HOST = mongodb+srv://`myusername`:`mypassword`@myserver.mongodb.com/`mydatabase`?retryWrites=true&w=majority
+
 In order to start working with this repository, you must first install the dependencies
 using `npm ci`.
 Then go to the `backend-part` folder and start the server.
