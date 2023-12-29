@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## First
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+On the backend side use Express and MongoDB to store data
 
-## Available Scripts
+In order to start working with this repository, you must first install the dependencies
+using `npm ci`.
+Then go to the `backend-part` folder and start the server.
+Command to start if you are in the main folder `cd backend-part` + `npm run start:dev`.
+The server is running on port `http://localhost:8080`
 
-In the project directory, you can run:
+## Second
 
-### `npm start`
+On the frontend side React app
 
-Runs the app in the development mode.\
+When the server is up and running, you need to go to the main folder `cd ..` and run the react app through the `npm start` command.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# bicycle-booking-services
 
-### `npm test`
+The functionality is quite simple:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. user can add a bicycle with fields (ID, name, type, color, wheel size, price, description)
+2. added bicycle is displayed on the list of bicycles
+3. user can change the status of the bicycle (available/busy/unavailable)
+4. user can remove a bicycle
+5. user can check stats on bicycles (number of bicycles, number of available bicycles, number of booked bicycles, average price of a bicycle)
 
-### `npm run build`
+## Routes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# GET /api/bike
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Request to retrieve a list of all bicycles.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# POST /api/bike/add
 
-### `npm run eject`
+Request to add a new bicycle to the database. Requires a valid JSON object with bicycle data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# PATCH /api/bike/:\_id/stats
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Request to update the status (stats) of a specific bicycle by its identifier. Requires a valid JSON object with the updated status.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# DELETE /api/bike/:\_id
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Request to delete a bicycle by its identifier.
 
-## Learn More
+`example request`
+{
+"name": "Bike Name",
+"type": "Bike Type",
+"color": "Bike Color",
+"wheel_size": 20,  
+ "price": 100,  
+ "id": "Bike-2024-001", // Must match the pattern /^Bike-2024-\d{3}$/
+"description": "Bike description",
+"stats": "available" // Should be one of: 'available', 'busy', 'unavailable' (optional, defaults to 'available')
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

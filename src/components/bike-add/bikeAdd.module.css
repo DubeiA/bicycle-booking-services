@@ -1,0 +1,133 @@
+.form {
+  margin-top: 9px;
+}
+
+.wrapperInput {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 120%;
+  margin-bottom: 10px;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  padding: 8px 16px;
+  align-items: flex-start;
+  gap: 10px;
+
+  align-self: stretch;
+  outline: none;
+  border: none;
+
+  border-radius: 5px;
+  background: #e8e8e8;
+}
+
+.textarea {
+  height: 75px;
+  padding: 5px 16px;
+
+  outline: none;
+  border: none;
+  border-radius: 8px;
+
+  background: #e8e8e8;
+  resize: none;
+  font-family: Saria;
+}
+
+.wrapperArea {
+  display: flex;
+  flex-direction: column;
+  width: 120%;
+}
+
+.wrapperBtn {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  width: 50%;
+  padding: 4px 22px;
+
+  border-radius: 5px;
+  background-color: #696969;
+
+  color: #fff;
+
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #9b9a9a;
+}
+
+.errorName {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 56%;
+  top: 8%;
+}
+
+.errorType {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 70%;
+  top: 8%;
+}
+
+.errorColor {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 56%;
+  top: 12%;
+}
+
+.errorWheel {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 70%;
+  top: 12%;
+}
+
+.errorPrice {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 56%;
+  top: 17%;
+}
+
+.errorId {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 70%;
+  top: 17%;
+}
+
+.errorArea {
+  position: absolute;
+  font-family: Saria;
+  color: tomato;
+  left: 56%;
+  top: 22%;
+}

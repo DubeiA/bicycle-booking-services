@@ -1,20 +1,31 @@
+.section {
+  min-width: 618px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+
+.sectionMore {
+  position: relative;
+  min-width: 618px;
+  margin-top: 9px;
+  height: 560px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 .list {
   display: flex;
-  gap: 15px;
+  gap: 8px;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 12px 18px;
+  padding: 4px 8px;
   border-radius: 10px;
 
-  height: 83px;
   border: 2px solid #6fcf97;
 
   background: #e8e8e8;
@@ -24,10 +35,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 12px 18px;
+  padding: 4px 8px;
   border-radius: 10px;
 
-  height: 83px;
   border: 2px solid #f2994a;
 
   background: #e8e8e8;
@@ -37,10 +47,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 12px 18px;
+  padding: 4px 8px;
   border-radius: 10px;
 
-  height: 83px;
   border: 2px solid rgba(235, 87, 87, 0.5);
   background: #e8e8e8;
 }
@@ -59,7 +68,7 @@
 .wraperStats {
   display: flex;
   align-content: center;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   opacity: 1;
 }
@@ -84,4 +93,19 @@
 
 .spanHr {
   text-transform: lowercase;
+}
+
+.btnClose {
+  /* position: absolute; */
+  border: none;
+  outline: none;
+
+  background-color: inherit;
+}
+
+.closeWraper {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+  align-items: flex-end;
 }

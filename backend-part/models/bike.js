@@ -24,11 +24,14 @@ const bikeSchema = new Schema(
     },
     wheel_size: {
       type: Number,
+      minlength: 1,
+      maxlength: 100,
       required: [true, 'wheel size is required'],
     },
     price: {
       type: Number,
-      minlength: 5,
+      minlength: 1,
+      maxlength: 999999,
       required: [true, 'price is required'],
     },
     id: {
@@ -39,7 +42,7 @@ const bikeSchema = new Schema(
     },
     description: {
       type: String,
-      minlength: 10,
+      minlength: 5,
       required: [true, 'description is required'],
     },
     stats: {
@@ -59,12 +62,12 @@ const statsSchema = Joi.object({
 });
 
 const bikesSchema = Joi.object({
-  name: Joi.string().min(5).required(),
-  type: Joi.string().min(5).required(),
-  color: Joi.string().min(3).required(),
-  wheel_size: Joi.number().required(),
-  price: Joi.number().required(),
-  description: Joi.string().min(10).required(),
+  name: Joi.string().min(5).max(20).required(),
+  type: Joi.string().min(5).max(20).required(),
+  color: Joi.string().min(3).max(15).required(),
+  wheel_size: Joi.number().min(1).max(100).required(),
+  price: Joi.number().min(1).max(999999).required(),
+  description: Joi.string().min(5).required(),
   id: Joi.string().pattern(bikeRegex).required(),
 });
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import css from './status.module.css';
-
-import Select from 'react-select';
+import classNames from 'classnames';
 
 const options = [
   { value: 'Available', label: 'Available' },
@@ -11,41 +10,56 @@ const options = [
 ];
 
 export const BikeStatus = ({ initialValue, onUpdateStatus, id }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState(initialValue);
 
-  const handleStatusChange = selectedOption => {
-    const newStatus = selectedOption.value;
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleStatusChange = e => {
+    const newStatus = e.target.outerText;
+
     setSelectedStatus(newStatus);
     onUpdateStatus(newStatus, id);
+
+    setIsOpen(false);
   };
 
   return (
-    <div className={css.status}>
-      <Select
-        value={{ value: selectedStatus, label: selectedStatus }}
-        onChange={handleStatusChange}
-        options={options}
-        styles={{
-          control: provided => ({
-            ...provided,
-            backgroundColor: '#e8e8e8',
-            color: '#333',
-            borderRadius: '5px',
-            fontFamily: 'Saira',
-            border: 'none',
-            outline: 'none',
-            minWidth: 110,
-            textTransform: 'capitalize',
-          }),
-          option: (provided, state) => ({
-            ...provided,
-            backgroundColor: state.isSelected ? '#6fcf97' : 'white',
-            color: state.isSelected ? 'white' : '#333',
-            cursor: 'pointer',
-            fontFamily: 'Saira',
-          }),
-        }}
-      />
+    <div className={css.selectContainer}>
+      <div
+        className={classNames({
+          [css.select]: isOpen,
+          [css.open]: isOpen,
+          [css.select]: !isOpen,
+        })}
+        onClick={toggleDropdown}>
+        {selectedStatus}
+        <div
+          className={css.arrowIcon}
+          style={{
+            transform: isOpen
+              ? 'translateY(-50%) rotate(180deg)'
+              : 'rotate(0deg)',
+            transition: 'transform 0.3s ease',
+          }}></div>
+      </div>
+      {isOpen && (
+        <ul className={css.dropdown}>
+          {options.map(option => (
+            <li
+              key={option.value}
+              onClick={e => handleStatusChange(e)}
+              className={classNames({
+                [css.item]: true,
+                [css.selected]: option.value === selectedStatus,
+              })}>
+              {option.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

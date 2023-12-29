@@ -3,11 +3,17 @@ import classNames from 'classnames';
 import { Typography } from '../typography/Typography';
 import { BikeStatus } from './status/Status';
 
+import close from '../../icons/Group.svg';
+
 import css from './bikeList.module.css';
 
-export const BikeList = ({ bikes, handleUpdateStatus }) => {
+export const BikeList = ({ bikes, handleUpdateStatus, deleteBike }) => {
   return (
-    <section>
+    <section
+      className={classNames({
+        [css.section]: true,
+        [css.sectionMore]: bikes && bikes.length > 6,
+      })}>
       <ul className={css.list}>
         {bikes &&
           bikes.map(bike => {
@@ -51,15 +57,21 @@ export const BikeList = ({ bikes, handleUpdateStatus }) => {
                   </div>
                 </div>
 
-                <div>
+                <div className={css.closeWraper}>
+                  <button
+                    className={css.btnClose}
+                    type='submit'
+                    onClick={() => deleteBike(bike._id)}>
+                    <img src={close} alt='Close' />
+                  </button>
                   <Typography
                     bold={'price'}
                     element={'p'}
                     className={classNames({
                       [css.wraperPriceUn]: bike.stats === 'unavailable',
                     })}>
-                    00.00 UAH/
-                    <span className={css.spanHr}>hr</span>
+                    {bike.price} UAH/
+                    <span className={css.spanHr}>hr.</span>
                   </Typography>
                 </div>
               </li>
