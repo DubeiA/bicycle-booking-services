@@ -24,8 +24,6 @@ export const BikeUse = ({ data }) => {
     }
   }, [data]);
 
-  console.log(bikes.cost);
-
   return (
     <div>
       <Typography bold={'statistics'} element={'p'}>
