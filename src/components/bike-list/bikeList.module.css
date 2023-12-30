@@ -96,11 +96,18 @@
 }
 
 .btnClose {
-  /* position: absolute; */
+  cursor: pointer;
   border: none;
   outline: none;
 
   background-color: inherit;
+
+  transition: transform 0.3s ease;
+}
+
+.btnClose:hover,
+.btnClose:focus {
+  transform: rotate(180deg);
 }
 
 .closeWraper {

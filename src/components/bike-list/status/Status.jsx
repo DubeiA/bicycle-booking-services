@@ -37,13 +37,11 @@ export const BikeStatus = ({ initialValue, onUpdateStatus, id }) => {
         onClick={toggleDropdown}>
         {selectedStatus}
         <div
-          className={css.arrowIcon}
-          style={{
-            transform: isOpen
-              ? 'translateY(-50%) rotate(180deg)'
-              : 'rotate(0deg)',
-            transition: 'transform 0.3s ease',
-          }}></div>
+          className={classNames({
+            [css.arrowIcon]: true,
+            [css.arrowIconTrans]: isOpen,
+            [css.select]: !isOpen,
+          })}></div>
       </div>
       {isOpen && (
         <ul className={css.dropdown}>

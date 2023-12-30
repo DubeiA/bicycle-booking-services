@@ -58,8 +58,6 @@
 
   outline: transparent;
   text-transform: capitalize;
-
-  transition: transform 2s ease;
 }
 
 .arrowIcon {
@@ -69,6 +67,12 @@
   right: 0%;
   top: 15px;
   background: url(../../../icons/Vector.svg) 0 0 no-repeat;
+  transform: translateX(65%) rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.arrowIconTrans {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .dropdown .item {
