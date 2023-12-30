@@ -1,15 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-import { Header } from './components/header/Header';
-import { BikeList } from './components/bike-list/BikeList';
-import { BikeAdd } from './components/bike-add/BikeAdd';
-import { BikeUse } from './components/bike-use/BikeUse';
-import { Footer } from './components/footer/Footer';
-
+import { lazy } from 'react';
 import { ProgressBar } from 'react-loader-spinner';
-
 import './index.css';
+
+const Header = lazy(() => import('./components/header/Header'));
+const BikeList = lazy(() => import('./components/bike-list/BikeList'));
+const BikeAdd = lazy(() => import('./components/bike-add/BikeAdd'));
+const BikeUse = lazy(() => import('./components/bike-use/BikeUse'));
+const Footer = lazy(() => import('./components/footer/Footer'));
 
 function App() {
   const [bikes, setBikes] = useState(null);
@@ -31,7 +30,7 @@ function App() {
 
   const addBike = async newBike => {
     const { name, type, color, wheel_size, price, id, description } = newBike;
-    // console.log(newBike);
+
     try {
       setLoader(true);
       await axios.post('http://localhost:8080/api/bike/add', {

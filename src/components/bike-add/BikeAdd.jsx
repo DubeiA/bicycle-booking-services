@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import css from './bikeAdd.module.css';
 
-export const BikeAdd = ({ addBike }) => {
+const BikeAdd = ({ addBike }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -164,3 +164,5 @@ export const BikeAdd = ({ addBike }) => {
     </form>
   );
 };
+
+export default BikeAdd;

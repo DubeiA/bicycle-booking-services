@@ -7,7 +7,7 @@ import close from '../../icons/Group.svg';
 
 import css from './bikeList.module.css';
 
-export const BikeList = ({ bikes, handleUpdateStatus, deleteBike }) => {
+const BikeList = ({ bikes, handleUpdateStatus, deleteBike }) => {
   return (
     <section
       className={classNames({
@@ -81,3 +81,5 @@ export const BikeList = ({ bikes, handleUpdateStatus, deleteBike }) => {
     </section>
   );
 };
+
+export default BikeList;

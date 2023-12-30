@@ -1,6 +1,6 @@
 import css from './header.module.css';
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className={css.header}>
       <a className={css.link} href='/'>
@@ -9,3 +9,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

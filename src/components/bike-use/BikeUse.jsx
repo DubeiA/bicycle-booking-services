@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Typography } from '../typography/Typography';
 import css from './bikeUse.module.css';
 
-export const BikeUse = ({ data }) => {
+const BikeUse = ({ data }) => {
   const [bikes, setBikes] = useState(null);
 
   useEffect(() => {
@@ -53,3 +53,5 @@ export const BikeUse = ({ data }) => {
     </div>
   );
 };
+
+export default BikeUse;
