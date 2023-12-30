@@ -46,7 +46,7 @@ function App() {
     } catch (error) {
       setLoader(true);
       console.error(error.response.data.message);
-      alert(error.response.data.message);
+      alert('ID have already used, enter other one');
     } finally {
       setLoader(false);
     }
@@ -114,7 +114,7 @@ function App() {
           />
         )}
         <div>
-          <BikeAdd addBike={addBike} />
+          <BikeAdd addBike={addBike} bikes={bikes} />
           <span className='lineHr'></span>
 
           <BikeUse data={bikes} />

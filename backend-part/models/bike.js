@@ -38,7 +38,7 @@ const bikeSchema = new Schema(
       type: String,
       match: bikeRegex,
       required: [true, 'ID is required'],
-      unique: true,
+      unique: [true, 'The ID is already use'],
     },
     description: {
       type: String,

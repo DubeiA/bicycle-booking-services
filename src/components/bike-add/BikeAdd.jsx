@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import css from './bikeAdd.module.css';
 
-const BikeAdd = ({ addBike }) => {
+const BikeAdd = ({ addBike, bikes }) => {
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -46,6 +46,12 @@ const BikeAdd = ({ addBike }) => {
         .required('Required'),
     }),
     onSubmit: values => {
+      const availableID = bikes.find(bike => bike.id === values.id);
+      console.log(availableID);
+      if (availableID) {
+        alert('ID already in used ');
+        return;
+      }
       addBike(values);
       formik.resetForm();
     },
@@ -61,7 +67,7 @@ const BikeAdd = ({ addBike }) => {
           type='text'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.name}
+          value={formik.values.name.trim()}
         />
         {formik.touched.name && formik.errors.name ? (
           <div className={css.errorName}>{formik.errors.name}</div>
@@ -75,7 +81,7 @@ const BikeAdd = ({ addBike }) => {
           type='text'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.type}
+          value={formik.values.type.trim()}
         />
         {formik.touched.type && formik.errors.type ? (
           <div className={css.errorType}>{formik.errors.type}</div>
@@ -89,7 +95,7 @@ const BikeAdd = ({ addBike }) => {
           placeholder='Color'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.color}
+          value={formik.values.color.trim()}
         />
         {formik.touched.color && formik.errors.color ? (
           <div className={css.errorColor}>{formik.errors.color}</div>
@@ -131,7 +137,7 @@ const BikeAdd = ({ addBike }) => {
           placeholder='ID (slug):Bike-2024-ХХХ'
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          value={formik.values.id}
+          value={formik.values.id.trim()}
         />
         {formik.touched.id && formik.errors.id ? (
           <div className={css.errorId}>{formik.errors.id}</div>

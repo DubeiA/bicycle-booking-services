@@ -62,7 +62,7 @@ const BikeList = ({ bikes, handleUpdateStatus, deleteBike }) => {
                     className={css.btnClose}
                     type='submit'
                     onClick={() => deleteBike(bike._id)}>
-                    <img src={close} alt='Close' />
+                    <img src={close} alt='Close' width={10} height={10} />
                   </button>
                   <Typography
                     bold={'price'}
