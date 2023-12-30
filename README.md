@@ -2,11 +2,13 @@
 
 On the backend side use Express and MongoDB to store data
 
-You'll need DB_HOST = mongodb+srv://`myusername`:`mypassword`@myserver.mongodb.com/`mydatabase`?retryWrites=true&w=majority
+You'll need in server.js DB_HOST = mongodb+srv://`myusername`:`mypassword`@myserver.mongodb.com/`mydatabase`?retryWrites=true&w=majority
 
-In order to start working with this repository, you must first install the dependencies
+In order to start working with this repository, you must twice install the dependencies
 using `npm ci`.
-Then go to the `backend-part` folder and start the server.
+
+First go to the `backend-part` folder use `cd backend-part` and install the dependencies
+using `npm ci`.
 Command to start if you are in the main folder `cd backend-part` + `npm run start:dev`.
 The server is running on port `http://localhost:8080`
 
@@ -14,7 +16,7 @@ The server is running on port `http://localhost:8080`
 
 On the frontend side React app
 
-When the server is up and running, you need to go to the main folder `cd ..` and run the react app through the `npm start` command.
+When the server is up and running, you need to go to the main folder `cd ..` and second time install the dependencies using `npm ci`. Now you can run the react app through the `npm start` command.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # bicycle-booking-services
